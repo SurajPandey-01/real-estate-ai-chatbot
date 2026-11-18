@@ -1,0 +1,18 @@
+
+from pydantic import BaseModel
+from typing import List
+
+
+class ChatRequest(BaseModel):
+    message: str
+
+
+class ChatSource(BaseModel):
+    name: str
+    source: str
+    url: str
+
+
+class ChatResponse(BaseModel):
+    answer: str
+    sources: List[ChatSource]
